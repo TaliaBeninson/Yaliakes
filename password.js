@@ -98,10 +98,10 @@ function checkPassword(event) {
     event.preventDefault(); 
   
     const input = document.getElementById("password").value;
-    const correctPassword = "uFoundTheKeyToMyHeart";
+    const correctPassword = "HrtKey";
   
     if (input === correctPassword) {
-      window.location.href = "index.html"; 
+      window.location.href = "password.html"; 
     } else {
       alert("Wrong key 💔");
     }
