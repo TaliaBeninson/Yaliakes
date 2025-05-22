@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: #fff0f5;
+    color: #444;
+    overflow: hidden;
+  }
+  
+  /* TIMELINE BAR */
+  .timeline-bar {
+    position: fixed;
+    top: 0;
+    left: 10px;
+    height: 100vh;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 1000;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+  }
+  
+  .dot.active {
+    background-color: #cc3366;
+  }
+  
+  /* MAIN SCROLL AREA */
+  .scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    margin-left: 50px; /* space for the timeline */
+  }
+  
+  /* EACH CARD/SECTION */
+  .card {
+    scroll-snap-align: start;
+    min-height: 100vh;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #ffffff;
+    border-bottom: 2px solid #eee;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  
+  .card:nth-child(even) {
+    background-color: #fce4ec;
+  }
+  
+  .card h2 {
+    color: #cc3366;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    padding: 0 1rem;
+  }
+  
+  a {
+    color: #cc3366;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
