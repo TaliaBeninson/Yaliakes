@@ -72,7 +72,7 @@ function checkPassword(event) {
     const input = document.getElementById("password").value;
     const correctPassword = "HrtKey";
     if (input === correctPassword) {
-      window.location.href = "/timeline/timeline.html"; 
+      window.location.href = "timeline/timeline.html"; 
     } else {
       alert("Wrong key 💔");
     }
