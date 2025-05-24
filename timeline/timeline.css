@@ -99,7 +99,6 @@ a {
 .intro-content {
   max-width: 600px;
   color: #333;
-  font-family: 'Georgia', serif;
   font-size: 1.2rem;
 }
 
@@ -213,7 +212,6 @@ a {
   padding: 1.5rem;
   margin: 1.5rem auto;
   box-shadow: 0 0 12px rgba(255, 111, 145, 0.2);
-  font-family: 'Segoe UI', sans-serif;
   color: #333;
   width: 80%;
 }
