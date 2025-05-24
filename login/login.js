@@ -70,7 +70,7 @@ window.addEventListener('DOMContentLoaded', () => {
 function checkPassword(event) {
     event.preventDefault(); 
     const input = document.getElementById("password").value;
-    const correctPassword = "HrtKey";
+    const correctPassword = "LuvU2";
     if (input === correctPassword) {
       window.location.href = "timeline/timeline.html"; 
     } else {
