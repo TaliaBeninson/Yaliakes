@@ -1,0 +1,60 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: black;
+    overflow: hidden;
+  }
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+.load {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: black;
+  }
+  
+  .term {
+    width: 95%;
+    max-width: 600px;
+    height: 90%;
+    background: black;
+    color: #00ff00;
+    font-family: monospace;
+    font-size: 1em;
+    padding: 10px 15px;
+    overflow-y: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,255,0,0.2);
+  }
+
+.term:after {
+  content: "_";
+  opacity: 1;
+  animation: cursor 1s infinite;
+}
+
+@keyframes cursor {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
