@@ -1132,7 +1132,7 @@ $(document).ready(function () {
           
             setTimeout(() => {
               $(".load").fadeOut(1000, () => {
-                window.location.href = "../login/login.html";
+                window.location.href = "..login/login.html";
               });
             }, 1000);
           }          
