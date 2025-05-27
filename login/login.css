@@ -132,12 +132,18 @@ fieldset {
 
 
 footer {
-  margin-top: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
   text-align: center;
   font-family: 'Comic Sans MS', cursive;
   color: #e91e63;
-  padding-bottom: 2rem;
+  box-sizing: border-box; 
 }
+
 
 legend {
   margin: 0;
@@ -248,9 +254,3 @@ fieldset input[type=submit] {
   font-family: Roboto, K2D, Arial, Verdana, Sans-serif;
 }
 
-footer {
-  position: absolute;
-  bottom: 5px;
-  left: 5px;
-  font-size: 0.75rem;
-}
