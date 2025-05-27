@@ -3,8 +3,6 @@ window.addEventListener('DOMContentLoaded', () => {
     let password = document.querySelector("#password");
     let mouth = document.querySelector("#mouth");
     let smile = document.querySelector("#smile");
-    let eyeRight = document.querySelector("#eye-right");
-    let eyeLeft = document.querySelector("#eye-left");
     let eyebrowRight = document.querySelector("#eyebrow-right");
     let eyebrowLeft = document.querySelector("#eyebrow-left");
     let armRight = document.querySelector("#arm-right");
@@ -12,7 +10,6 @@ window.addEventListener('DOMContentLoaded', () => {
     let handRight = document.querySelector("#hand-right");
     let handLeft = document.querySelector("#hand-left");
 
-    // reset the eyes and eyebrows to their original position after leaving a field
     function resetEyesMouth(e) {
         let eyeRight = document.querySelector("#eye-right");
         let eyeLeft = document.querySelector("#eye-left");
@@ -28,7 +25,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // generic: inputs with placeholder will have some animation to minimize the placeholder
     document.querySelectorAll("fieldset.with-placeholder input").forEach(function (el, idx) {
         el.addEventListener("focus", function () {
             this.parentNode.querySelector(".placeholder").classList.add("active");
@@ -40,7 +36,6 @@ window.addEventListener('DOMContentLoaded', () => {
         })
     });
 
-    // password animation: move arms to cover eyes on focus, and return to original position on blur
     password.addEventListener("focus", function (e) {
         svg.classList.add("arms-up");
         if (svg.classList.contains("looking")) {
@@ -63,18 +58,33 @@ window.addEventListener('DOMContentLoaded', () => {
         handLeft.setAttribute("d", "M 51,270 C 46,263 60,243 63,246 65,247 66,248 61,255 72,243 76,238 79,240 82,243 72,254 69,257 72,254 82,241 86,244 89,247 75,261 73,263 77,258 84,251 86,253 89,256 70,287 59,278");
         handRight.setAttribute("d", "M 199,270 C 204,263 190,243 187,246 185,247 184,248 189,255 178,243 174,238 171,240 168,243 178,254 181,257 178,254 168,241 164,244 161,247 175,261 177,263 173,258 166,251 164,253 161,256 180,287 191,278");
     });
-      
+
 });
 
 
 function checkPassword(event) {
-    event.preventDefault(); 
+    event.preventDefault();
     const input = document.getElementById("password").value;
     const correctPassword = "LuvU2";
     if (input === correctPassword) {
-      window.location.href = "timeline/timeline.html"; 
+        document.querySelector('form').style.display = 'none';
+        document.getElementById('loading-love').style.display = 'block';
+        window.location.href = "timeline/timeline.html";
+
+        return false;
     } else {
-      alert("Wrong key 💔");
+        alert("Wrong key 💔");
     }
-    return false; 
-  }
+    return false;
+}
+
+function spawnHearts() {
+    for (let i = 0; i < 15; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+        document.body.appendChild(heart);
+    }
+}
+window.onload = spawnHearts;
