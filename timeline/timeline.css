@@ -43,7 +43,8 @@ html {
   height: 100vh;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
-  margin-left: 50px; /* space for timeline */
+  margin-left: 50px;
+  /* space for timeline */
 }
 
 /* Each Card Section */
@@ -112,17 +113,21 @@ a {
     left: 5px;
     width: 20px;
   }
+
   .dot {
     width: 10px;
     height: 10px;
   }
+
   .scroll-container {
     margin-left: 40px;
   }
+
   .card {
     padding: 2rem 1rem;
-    min-height: auto; 
+    min-height: auto;
   }
+
   .intro {
     height: auto;
     padding: 1.5rem 1rem;
@@ -153,10 +158,12 @@ a {
     left: 2px;
     width: 16px;
   }
+
   .dot {
     width: 8px;
     height: 8px;
   }
+
   .scroll-container {
     margin-left: 30px;
   }
@@ -164,8 +171,13 @@ a {
 
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .phone-screen {
@@ -177,7 +189,6 @@ a {
   flex-direction: column;
   overflow: hidden;
   border: 0.5px solid #111;
-
 }
 
 .camera-top {
@@ -192,11 +203,19 @@ a {
 }
 
 .camera-bottom {
-  height: 50px; /* Reduced height */
+  height: 50px;
   background: rgba(255, 255, 255, 0.05);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#camera-text {
+  font-style: italic;
+  color: #ff6f91;
+  line-height: 1.4;
+  font-size: 0.9rem;
+  margin-bottom: 60px;
 }
 
 .shutter-button {
@@ -215,7 +234,7 @@ a {
   box-shadow: 0 0 12px rgba(255, 111, 145, 0.2);
   color: #333;
   width: 80%;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 .rating-card h3 {
@@ -302,3 +321,25 @@ a {
 }
 
 
+#countup-container {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 2px dashed #ff6f91;
+  border-radius: 16px;
+  background: rgba(255, 240, 245, 0.1);
+  color: #ff6f91;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.1rem;
+  text-align: center;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeIn 2s ease-out;
+}
+
+#countup {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  color: #ff4f81;
+}
