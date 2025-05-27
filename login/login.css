@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto|K2D');
 
+
+svg {
+  transition: transform 0.3s ease;
+}
+svg:hover {
+  transform: scale(1.05) rotate(1deg);
+}
+
+input[type="submit"]:hover {
+  background-color: #f06292;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
 /* SVG */
 @-moz-keyframes blink { 
   0%  { ry: 5; }
@@ -37,6 +52,52 @@ html, body {
   font-family: K2D,Roboto, Arial, Verdana, sans-serif;
 }
 
+/* Hearts should go behind */
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: pink;
+  transform: rotate(45deg);
+  animation: float 6s infinite ease-in;
+  z-index: 0; /* <-- behind everything */
+  opacity: 0.7;
+}
+
+
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: pink;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes float {
+  0% {
+    bottom: -20px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 100vh;
+    opacity: 0;
+  }
+}
+
 
 form {
   display: inline-block;
@@ -53,9 +114,8 @@ form {
   box-sizing: border-box;
   border-radius: 4px;
   box-shadow: 0px 20px 20px -20px rgba(0,0,0,0.25);
+  z-index: 1;
 }
-
-
 
 form svg {
   margin: auto auto;
@@ -70,6 +130,14 @@ fieldset {
   padding-top: 1rem;
 }
 
+
+footer {
+  margin-top: auto;
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive;
+  color: #e91e63;
+  padding-bottom: 2rem;
+}
 
 legend {
   margin: 0;
