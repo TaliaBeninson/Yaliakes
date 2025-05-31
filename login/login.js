@@ -65,7 +65,7 @@ window.addEventListener('DOMContentLoaded', () => {
 function checkPassword(event) {
     event.preventDefault();
     const input = document.getElementById("password").value;
-    const correctPassword = "LuvU2";
+    const correctPassword = "blush";
     if (input === correctPassword) {
         document.querySelector('form').style.display = 'none';
         document.getElementById('loading-love').style.display = 'block';
