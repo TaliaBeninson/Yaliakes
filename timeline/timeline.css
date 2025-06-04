@@ -45,7 +45,7 @@ body {
 .scroll-container {
   height: 100vh;
   overflow-y: scroll;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   margin-left: 50px;
   scroll-behavior: smooth;
 }
@@ -63,6 +63,11 @@ body {
   text-align: center;
   box-sizing: border-box;
 }
+
+.card:last-child {
+  min-height: calc(100vh - 30px); 
+}
+
 
 .placeholder-image{
   background-color: #fce4ec;
