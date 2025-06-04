@@ -45,7 +45,7 @@ body {
 .scroll-container {
   height: 100vh;
   overflow-y: scroll;
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y proximity; 
   margin-left: 50px;
   scroll-behavior: smooth;
 }
@@ -71,6 +71,7 @@ body {
 
 .placeholder-image{
   background-color: #fce4ec;
+  height: 70vh;
 
 }
 
@@ -202,8 +203,6 @@ a {
   flex-direction: column;
   overflow: hidden;
   border: 0.5px solid #111;
-  margin-bottom: 100px;
-  margin-top: 20px;
 }
 
 .camera-top {
