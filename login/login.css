@@ -4,6 +4,7 @@
 svg {
   transition: transform 0.3s ease;
 }
+
 svg:hover {
   transform: scale(1.05) rotate(1deg);
 }
@@ -16,72 +17,100 @@ input[type="submit"]:hover {
 }
 
 /* SVG */
-@-moz-keyframes blink { 
-  0%  { ry: 5; }
-  49% { ry: 5; }
-  50% { ry: 0; }
-  51% { ry: 5; }
-}
-@-webkit-keyframes blink { 
-  0%  { ry: 5; }
-  49% { ry: 5; }
-  50% { ry: 0; }
-  51% { ry: 5; }
-}
-@keyframes blink { 
-  0%  { ry: 5; }
-  49% { ry: 5; }
-  50% { ry: 0; }
-  51% { ry: 5; }
-}
-.skin { fill: #eab38f; }
-.eyes { fill: #1f1f1f; animation: blink 10s alternate infinite; -webkit-animation: blink 10s alternate infinite; -moz-animation: blink 10s alternate infinite;}
-.hair { fill: #2f1b0d; }
-.line { fill: none; stroke: #2f1b0d; stroke-width:2px; }
-.arm, #mouth, #smile, .eyes, .hand, .eyebrow { transition: all 0.25s; }
+@-moz-keyframes blink {
+  0% {
+    ry: 5;
+  }
 
-html, body {
+  49% {
+    ry: 5;
+  }
+
+  50% {
+    ry: 0;
+  }
+
+  51% {
+    ry: 5;
+  }
+}
+
+@-webkit-keyframes blink {
+  0% {
+    ry: 5;
+  }
+
+  49% {
+    ry: 5;
+  }
+
+  50% {
+    ry: 0;
+  }
+
+  51% {
+    ry: 5;
+  }
+}
+
+@keyframes blink {
+  0% {
+    ry: 5;
+  }
+
+  49% {
+    ry: 5;
+  }
+
+  50% {
+    ry: 0;
+  }
+
+  51% {
+    ry: 5;
+  }
+}
+
+.skin {
+  fill: #eab38f;
+}
+
+.eyes {
+  fill: #1f1f1f;
+  animation: blink 10s alternate infinite;
+  -webkit-animation: blink 10s alternate infinite;
+  -moz-animation: blink 10s alternate infinite;
+}
+
+.hair {
+  fill: #2f1b0d;
+}
+
+.line {
+  fill: none;
+  stroke: #2f1b0d;
+  stroke-width: 2px;
+}
+
+.arm,
+#mouth,
+#smile,
+.eyes,
+.hand,
+.eyebrow {
+  transition: all 0.25s;
+}
+
+html,
+body {
   --light-main-color: #ffeef3;
   --dark-main-color: #f48fb1;
   --darker-main-color: #ec407a;
-  
   background: var(--light-main-color);
   font-size: 16px;
   margin: 0;
   padding: 0;
-  font-family: K2D,Roboto, Arial, Verdana, sans-serif;
-}
-
-/* Hearts should go behind */
-.heart {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: pink;
-  transform: rotate(45deg);
-  animation: float 6s infinite ease-in;
-  z-index: 0; /* <-- behind everything */
-  opacity: 0.7;
-}
-
-
-.heart::before,
-.heart::after {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: pink;
-  border-radius: 50%;
-}
-
-.heart::before {
-  top: -10px;
-  left: 0;
-}
-.heart::after {
-  left: -10px;
-  top: 0;
+  font-family: K2D, Roboto, Arial, Verdana, sans-serif;
 }
 
 @keyframes float {
@@ -89,9 +118,11 @@ html, body {
     bottom: -20px;
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     bottom: 100vh;
     opacity: 0;
@@ -113,7 +144,7 @@ form {
   transform: translate(-50%, -50%);
   box-sizing: border-box;
   border-radius: 4px;
-  box-shadow: 0px 20px 20px -20px rgba(0,0,0,0.25);
+  box-shadow: 0px 20px 20px -20px rgba(0, 0, 0, 0.25);
   z-index: 1;
 }
 
@@ -145,6 +176,7 @@ footer {
 }
 
 
+
 legend {
   margin: 0;
   padding: 0;
@@ -155,7 +187,7 @@ legend {
   left: 0;
 }
 
-fieldset > div {
+fieldset>div {
   border: 1px solid var(--dark-main-color);
   border-radius: 3px;
   position: relative;
@@ -167,7 +199,7 @@ fieldset#submit-field {
   padding-top: 0;
 }
 
-fieldset#submit-field > div {
+fieldset#submit-field>div {
   border-color: var(--darker-main-color);
   background: var(--darker-main-color);
 }
@@ -177,7 +209,7 @@ fieldset .placeholder {
   top: 50%;
   left: 1rem;
   -webkit-transform: translate(0, -50%);
-  transform: translate(0, -50%); 
+  transform: translate(0, -50%);
   z-index: 5;
   font-size: 1.1rem;
   transition: all 0.25s;
@@ -209,7 +241,7 @@ fieldset input {
   color: var(--darker-main-color);
   display: block;
   position: absolute;
-  top: 0rem; 
+  top: 0rem;
   right: 0rem;
   height: 0.9rem;
   background: #fff;
@@ -230,7 +262,7 @@ fieldset input {
 }
 
 #show-password-container.active span::before {
-  content:"";
+  content: "";
   background: var(--darker-main-color);
   display: block;
   width: 75%;
@@ -253,4 +285,3 @@ fieldset input[type=submit] {
   cursor: pointer;
   font-family: Roboto, K2D, Arial, Verdana, Sans-serif;
 }
-
