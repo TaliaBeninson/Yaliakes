@@ -65,7 +65,7 @@ window.addEventListener('DOMContentLoaded', () => {
 function checkPassword(event) {
     event.preventDefault();
     const input = document.getElementById("password").value;
-    const correctPassword = "blush";
+    const correctPassword = "masmik";
     if (input === correctPassword) {
         document.querySelector('form').style.display = 'none';
         document.getElementById('loading-love').style.display = 'block';
@@ -77,14 +77,3 @@ function checkPassword(event) {
     }
     return false;
 }
-
-function spawnHearts() {
-    for (let i = 0; i < 15; i++) {
-        const heart = document.createElement('div');
-        heart.classList.add('heart');
-        heart.style.left = Math.random() * 100 + 'vw';
-        heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
-        document.body.appendChild(heart);
-    }
-}
-window.onload = spawnHearts;
