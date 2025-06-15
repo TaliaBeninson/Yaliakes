@@ -46,6 +46,39 @@ document.addEventListener("DOMContentLoaded", () => {
   cards.forEach(card => {
     observer.observe(card);
   });
+
+  // Collapsible logic
+  const collapsibles = document.querySelectorAll(".collapsible");
+  collapsibles.forEach(button => {
+    button.addEventListener("click", () => {
+      const content = button.nextElementSibling;
+      const isOpen = content.style.maxHeight;
+      document.querySelectorAll('.content').forEach(c => c.style.maxHeight = null);
+      if (!isOpen) content.style.maxHeight = content.scrollHeight + "px";
+    });
+  });
+
+  document.querySelectorAll('.icon-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.dataset.target;
+      const target = document.getElementById(targetId);
+  
+      document.querySelectorAll('.overlay-card').forEach(card => {
+        if (card.id === targetId) {
+          card.classList.toggle('active');
+        } else {
+          card.classList.remove('active');
+        }
+      });
+    });
+  });
+  
+  // Optional: close overlays when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.overlay-card') && !e.target.closest('.icon-toggle')) {
+      document.querySelectorAll('.overlay-card').forEach(card => card.classList.remove('active'));
+    }
+  });
 });
 
 
